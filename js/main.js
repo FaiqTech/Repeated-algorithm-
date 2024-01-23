@@ -1,3 +1,97 @@
+// //*arrayin icinden en kicik reqemi cxart
+// //?   metodnan
+
+var array = [2, 5, 4, 1, 22, 77, 23, 97];
+
+console.log(Math.min(...array));
+
+// //?   custome
+
+var min = array[0];
+for (let index = 0; index < array.length; index++) {
+  if (min > array[index]) {
+    min = array[index];
+  }
+}
+console.log(min);
+
+//* promptdan daxil edilen 10 ededin cemi
+
+var cem = 0;
+
+for (var i = 0; i < 10; i++) {
+  cem += parseFloat(prompt("ədədi daxil edin"));
+}
+
+alert("Daxil edilən ədədlərin cəmi: " + cem);
+
+//* promptdan daxil edilen 10 musbet ededlerin  cemi
+
+let cem = 0;
+
+for (let i = 0; i < 10; i++) {
+  let eded = parseFloat(prompt("Müsbət ədəd daxil edin:"));
+
+  if (eded > 0) {
+    cem += eded;
+  } else {
+    alert("musbet ədəd daxil edilməyib. Yenidən cəhd edin.");
+  }
+}
+
+alert("Daxil edilmiş 10 müsbət ədədlərin cəmi: " + cem);
+
+//* promptan daxil edilen ededin 0, musbet ve ya menfi oldugnu tap
+
+let eded = prompt("eded daxil edin ");
+
+if (eded > 0) {
+  alert("eded musbetdir");
+} else if (eded < 0) {
+  alert("eded menfidir");
+} else {
+  alert("eded o a beraberdir");
+}
+
+//* promptdan daxil edilen ededin 5 e bolunub bolunmediyini tap
+
+var eded = prompt("eded daxil edin");
+
+if (eded % 5 == 0) {
+  alert("Eded 5-e tam bölünür");
+} else {
+  alert("Eded 5-e tam bölünmür");
+}
+
+// //* diskrminantin tapilmasi
+
+var b = prompt("b eded daxil edin");
+var a = prompt(" a eded daxil edin");
+var c = prompt("c ededini daxil edin");
+if (a == "" || b == "" || c == "") {
+  alert("Bos xanani doldurunuz!");
+} else {
+  var b = b * b;
+  var dis = b - 4 * (a * c);
+}
+alert(`Diskriminant: ${dis}`);
+
+//* promptan daxil edilen ededden , hemin ededin reqemlerinin cemini cixmaq
+
+var eded = prompt("Ededi daxil edin:");
+let remember = eded;
+var cem = 0;
+
+while (eded !== 0) {
+  var qaligi = eded % 10;
+
+  eded = Math.floor(eded / 10);
+
+  cem += qaligi;
+}
+let result = remember - cem;
+alert(result);
+
 //* 1) Bir array’iniz  var ve bir funksiya yaradirsiz eğer arayın ici doludursa
 //* sonuncu elementi qaytaracaq eğer arrayin ici bosdusa ekrana -1 qaytaracaq
 
@@ -16,6 +110,17 @@ console.log(findArray(fullArray));
 console.log(findArray(emptyArray));
 
 //! 2) Bir mix array’iniz var 30’dan boyuk ededleri artan sıra ile ekranda göstermek
+
+let mixArray = [20, 30, 66, 50, 32, 90];
+
+let number = 30;
+let arr2 = [];
+
+for (let index = 0; index < array.length; index++) {
+  if (arr[index] > number) {
+    arr2.push(arr[i]);
+  }
+}
 
 //* 3) isdifadeci reqem daxil edir 4reqemli  ve reqemlerinin icinde 2 ve 3’cu reqemler eger cutduse
 //* ekrana her ikisi cutdur cixacaq eğer biri tek biri cutdurse ekrana biri tek biri cutdur cixacaq
@@ -67,7 +172,7 @@ function pyramid(n) {
 }
 console.log(pyramid(7));
 
-//*  6) a = 4 setirin sayi
+//*  6) a = 2 setirin sayi
 //*  b = 5 sutunun sayi
 
 //**
@@ -76,16 +181,17 @@ console.log(pyramid(7));
 //**
 //**
 
-// function slideStars(columns) {
-for (let i = 0; i < 1; i++) {
-  let row = "";
-  for (let j = 0; j < columns; j++) {
-    row += "**" + "\n";
-  }
-  console.log(row);
-}
+let a = 4;
+let b = 5;
+let str = "";
 
-slideStars(5);
+for (let i = 0; i < b; i++) {
+  for (let j = 0; j < a; j++) {
+    str += "*";
+  }
+  str += "\n";
+}
+console.log(str);
 
 //*  7)  mix array verilib icinde stringleri ekrana cixardın
 
